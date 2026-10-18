@@ -1,13 +1,21 @@
 (function () {
   var html = document.documentElement, body = document.body;
+  var KNOWN = ["light", "rust", "coal", "navy", "ayu"];
   body.classList.remove("no-js"); body.classList.add("js");
-  try { var t = localStorage.getItem("nn-theme"); if (t) { html.classList.remove("light"); html.classList.add(t); } } catch (e) {}
+  [].slice.call(html.classList).forEach(function (c) { if (KNOWN.indexOf(c) < 0 && c !== "js") html.classList.remove(c); });
+  if (!html.classList.length) html.classList.add("light");
+  try {
+    var t = localStorage.getItem("nn-theme");
+    if (t === "dark") t = "navy";
+    if (t && KNOWN.indexOf(t) >= 0) { KNOWN.forEach(function (k) { html.classList.remove(k); }); html.classList.add(t); }
+  } catch (e) {}
   var btn = document.getElementById("theme-toggle"), list = document.getElementById("theme-list");
   if (btn && list) {
     btn.addEventListener("click", function (e) { e.stopPropagation(); list.classList.toggle("visible"); });
-    Array.prototype.forEach.call(list.querySelectorAll("button.theme"), function (b) {
+    [].slice.call(list.querySelectorAll("button.theme")).forEach(function (b) {
       b.addEventListener("click", function () {
-        html.classList.remove("light", "rust", "coal", "navy", "ayu"); html.classList.add(b.id);
+        KNOWN.forEach(function (k) { html.classList.remove(k); });
+        html.classList.add(b.id);
         try { localStorage.setItem("nn-theme", b.id); } catch (e) {}
         list.classList.remove("visible");
       });
