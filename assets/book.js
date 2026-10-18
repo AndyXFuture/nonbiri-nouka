@@ -1,22 +1,14 @@
-// 站点交互：主题切换 / 侧栏 / 当前页高亮
 (function () {
-  var html = document.documentElement;
-  var body = document.body;
+  var html = document.documentElement, body = document.body;
   body.classList.remove("no-js"); body.classList.add("js");
-  try {
-    var t = localStorage.getItem("nn-theme");
-    if (t) { html.classList.remove("light"); html.classList.add(t); }
-  } catch (e) {}
-  var btn = document.getElementById("theme-toggle");
-  var list = document.getElementById("theme-list");
+  try { var t = localStorage.getItem("nn-theme"); if (t) { html.classList.remove("light"); html.classList.add(t); } } catch (e) {}
+  var btn = document.getElementById("theme-toggle"), list = document.getElementById("theme-list");
   if (btn && list) {
     btn.addEventListener("click", function (e) { e.stopPropagation(); list.classList.toggle("visible"); });
-    list.querySelectorAll("button.theme").forEach(function (b) {
+    Array.prototype.forEach.call(list.querySelectorAll("button.theme"), function (b) {
       b.addEventListener("click", function () {
-        var id = b.id;
-        html.classList.remove("light", "rust", "coal", "navy", "ayu");
-        html.classList.add(id);
-        try { localStorage.setItem("nn-theme", id); } catch (e) {}
+        html.classList.remove("light", "rust", "coal", "navy", "ayu"); html.classList.add(b.id);
+        try { localStorage.setItem("nn-theme", b.id); } catch (e) {}
         list.classList.remove("visible");
       });
     });
@@ -24,10 +16,11 @@
   }
   var anchor = document.getElementById("sidebar-toggle-anchor");
   if (anchor) {
-    try { var s = localStorage.getItem("nn-sidebar"); if (s === "hidden") anchor.checked = false; } catch (e) {}
-    anchor.addEventListener("change", function () {
-      try { localStorage.setItem("nn-sidebar", anchor.checked ? "visible" : "hidden"); } catch (e) {}
-    });
+    var saved = null; try { saved = localStorage.getItem("nn-sidebar"); } catch (e) {}
+    if (saved === "hidden") anchor.checked = false;
+    else if (saved === "visible") anchor.checked = true;
+    else anchor.checked = window.innerWidth > 900;
+    anchor.addEventListener("change", function () { try { localStorage.setItem("nn-sidebar", anchor.checked ? "visible" : "hidden"); } catch (e) {} });
   }
   var active = document.querySelector("#sidebar .active");
   if (active) active.scrollIntoView({ block: "center" });
