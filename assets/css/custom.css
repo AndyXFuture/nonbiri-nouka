@@ -1,5 +1,5 @@
 /* 复刻 re0zero.top 的 theme/custom.css 视觉 */
-:root { --content-max-width: 92%; }
+:root { --content-max-width: 92%; width: 100%; }
 /* 主题变量兜底：即使 html 上的主题类异常也不会变成无样式惨白 */
 html { --bg: hsl(0, 0%, 100%); --fg: hsl(0, 0%, 0%); --sidebar-bg: #fafafa; --sidebar-fg: hsl(0, 0%, 0%); --sidebar-active: #1f1fff; --sidebar-non-existant: #aaaaaa; --links: #20609f; --table-border-color: hsl(0, 0%, 95%); --table-header-bg: hsl(0, 0%, 80%); --table-alternate-bg: hsl(0, 0%, 97%); --theme-hover: #e6e6e6; --icons: #747474; --icons-hover: #000; --theme-popup-bg: #fafafa; --theme-popup-border: #cccccc; --searchbar-border-color: #aaa; --searchbar-bg: #fafafa; --searchbar-fg: #000; }
 .content main { font-size: 18px; line-height: 1.75; padding-left: 24px; padding-right: 24px; }
