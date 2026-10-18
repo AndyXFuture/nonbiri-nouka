@@ -1,0 +1,7 @@
+/* 阅读体验微调 */
+main h1 { font-size: 2.2rem; margin-top: 0; padding-bottom: .3em; border-bottom: 1px solid var(--table-border-color); }
+main p { text-indent: 2em; line-height: 1.85; margin: 0 0 .9em; }
+main p em { text-indent: 0; display: block; color: var(--sidebar-non-existant); font-size: 1.3rem; margin-bottom: 1.2em; }
+main table { width: 100%; margin: 1em 0; }
+main table td, main table th { padding: 6px 10px; }
+main ul, main ol { line-height: 1.8; }
