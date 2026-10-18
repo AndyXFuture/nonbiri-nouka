@@ -1,4 +1,3 @@
-/* probe */ body { border-top: 10px solid #e11; }
 /* 复刻 re0zero.top 的 theme/custom.css 视觉 */
 :root { --content-max-width: 92%; width: 100%; }
 /* 主题变量兜底：即使 html 上的主题类异常也不会变成无样式惨白 */
