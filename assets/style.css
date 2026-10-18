@@ -1,0 +1,42 @@
+/* nonbiri-nouka 站点样式（参考 mdBook 阅读体验） */
+:root{--bg:#fff;--fg:#333;--muted:#888;--line:#e5e5e5;--side:#fafafa;--link:#2b6cb0;--accent:#4a7c59;}
+html[data-theme="dark"]{--bg:#1e1e1e;--fg:#ccc;--muted:#8a8a8a;--line:#333;--side:#252526;--link:#7cb3e0;--accent:#7fbf8f;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Georgia,serif;line-height:1.9}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+#topbar{position:fixed;top:0;left:0;right:0;height:48px;display:flex;align-items:center;gap:12px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--bg);z-index:20}
+#topbar .brand{font-weight:700;font-size:16px;color:var(--accent);white-space:nowrap}
+#topbar .sp{flex:1}
+#topbar button,#topbar input{font-family:inherit;font-size:14px;border:1px solid var(--line);background:var(--side);color:var(--fg);border-radius:4px;padding:4px 8px;cursor:pointer}
+#topbar input{cursor:text;width:180px}
+#sidebar{position:fixed;top:48px;bottom:0;left:0;width:300px;overflow-y:auto;background:var(--side);border-right:1px solid var(--line);padding:12px 0;font-size:14px}
+#sidebar .sec{padding:8px 16px 4px;font-weight:700;color:var(--muted);font-size:12px;letter-spacing:.05em}
+#sidebar a{display:block;padding:3px 16px 3px 24px;color:var(--fg);border-left:3px solid transparent;line-height:1.6}
+#sidebar a:hover{background:rgba(0,0,0,.04);text-decoration:none}
+#sidebar a.on{border-left-color:var(--accent);background:rgba(0,0,0,.05);font-weight:600}
+#sidebar details summary{cursor:pointer;padding:3px 16px;color:var(--fg);font-weight:600;list-style:none}
+#sidebar details summary::-webkit-details-marker{display:none}
+#sidebar details summary:before{content:"▸ ";color:var(--muted)}
+#sidebar details[open] summary:before{content:"▾ "}
+#main{margin:48px 0 0 300px;padding:28px 40px 80px;max-width:900px}
+h1{font-size:1.6em;border-bottom:1px solid var(--line);padding-bottom:.4em;margin-top:0}
+h2{font-size:1.25em;margin-top:2em}
+#main p{text-indent:2em;margin:0 0 .55em;text-align:justify}
+#main p.noindent{text-indent:0}
+.meta{color:var(--muted);font-size:13px;margin:0 0 1.4em}
+.nav{display:flex;justify-content:space-between;gap:12px;margin:2.5em 0 0;padding-top:1em;border-top:1px solid var(--line);font-size:14px}
+.nav a{display:inline-block;max-width:45%}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:1em 0}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--side)}
+code{background:var(--side);padding:1px 5px;border-radius:3px;font-size:.9em}
+.hero{background:linear-gradient(135deg,rgba(74,124,89,.12),rgba(74,124,89,.02));border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin:0 0 2em}
+.hero h1{border:0;margin:0 0 .3em}
+.hero p{text-indent:0;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:1.5em 0}
+.card{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--side)}
+.card b{display:block;margin-bottom:4px}
+.card span{color:var(--muted);font-size:13px}
+@media (max-width:900px){#sidebar{transform:translateX(-100%);transition:.2s}#sidebar.open{transform:none}#main{margin-left:0;padding:20px 18px 60px}}
+#menu{display:none}@media (max-width:900px){#menu{display:inline-block}}
