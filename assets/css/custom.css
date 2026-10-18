@@ -1,7 +1,19 @@
-/* 阅读体验微调 */
-main h1 { font-size: 2.2rem; margin-top: 0; padding-bottom: .3em; border-bottom: 1px solid var(--table-border-color); }
-main p { text-indent: 2em; line-height: 1.85; margin: 0 0 .9em; }
-main p em { text-indent: 0; display: block; color: var(--sidebar-non-existant); font-size: 1.3rem; margin-bottom: 1.2em; }
-main table { width: 100%; margin: 1em 0; }
-main table td, main table th { padding: 6px 10px; }
+/* 对齐 re0zero.top 的阅读观感 */
+.content main { font-size: 1.7rem; }
+main h1 { font-size: 2.4rem; font-weight: 700; margin: 0 0 .3em; padding-bottom: .45em; border-bottom: 1px solid var(--table-border-color); }
+main p { text-indent: 0; line-height: 1.85; margin: 0 0 1em; }
+main p.meta { font-size: 1.35rem; color: var(--sidebar-non-existant); margin: 0 0 1.6em; }
+main p.brk { text-align: center; color: var(--sidebar-non-existant); }
+main table { width: 100%; margin: 1.2em 0; }
+main table td, main table th { padding: 6px 12px; }
 main ul, main ol { line-height: 1.8; }
+main a { text-decoration: none; }
+main a:hover { text-decoration: underline; }
+/* 侧栏折叠 */
+#sidebar details > summary { cursor: pointer; padding: 2px 8px; border-radius: 3px; font-weight: 600; list-style: none; color: var(--sidebar-fg); }
+#sidebar details > summary::-webkit-details-marker { display: none; }
+#sidebar details > summary:before { content: "▸ "; color: var(--sidebar-non-existant); }
+#sidebar details[open] > summary:before { content: "▾ "; }
+#sidebar details > summary:hover { background: var(--theme-hover); }
+#sidebar .section { list-style: none; padding-left: 14px; margin: 0 0 .4em; }
+#sidebar .chapter li { line-height: 1.8; }
