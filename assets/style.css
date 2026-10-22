@@ -40,3 +40,19 @@ code{background:var(--side);padding:1px 5px;border-radius:3px;font-size:.9em}
 .card span{color:var(--muted);font-size:13px}
 @media (max-width:900px){#sidebar{transform:translateX(-100%);transition:.2s}#sidebar.open{transform:none}#main{margin-left:0;padding:20px 18px 60px}}
 #menu{display:none}@media (max-width:900px){#menu{display:inline-block}}
+/* 分类名词库 / 人物页 */
+table.glossary td.jp{font-family:"Noto Sans CJK JP","Yu Gothic",sans-serif;white-space:nowrap}
+table.glossary td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;padding:0 6px;border-radius:4px;font-size:12px;line-height:1.7;border:1px solid var(--line);background:var(--side);white-space:nowrap}
+.tag.ok{color:#2f6b45;border-color:#b9d8c4;background:#eef7f1}
+.tag.user{color:#1f5fa8;border-color:#bcd4ef;background:#eef4fb}
+.tag.small{color:#8a6d1f;border-color:#e6d7a8;background:#fbf7e9}
+.tag.pending{color:#a33;border-color:#e6b8b8;background:#fbeeee}
+html[data-theme="dark"] .tag.ok{color:#9fd6b0;background:#1d3326;border-color:#2f5540}
+html[data-theme="dark"] .tag.user{color:#9cc4ee;background:#1b2c40;border-color:#2c4a68}
+html[data-theme="dark"] .tag.small{color:#e0c477;background:#37301c;border-color:#5a4c28}
+html[data-theme="dark"] .tag.pending{color:#e6a0a0;background:#3a1e1e;border-color:#623232}
+details.spoiler{margin:2em 0;border:1px solid var(--line);border-radius:8px;padding:10px 14px;background:var(--side)}
+details.spoiler summary{cursor:pointer;font-weight:700;color:var(--accent)}
+details.spoiler .warn{color:#a33;font-size:13px;text-indent:0;margin:.6em 0}
+html[data-theme="dark"] details.spoiler .warn{color:#e6a0a0}
