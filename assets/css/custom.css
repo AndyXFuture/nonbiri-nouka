@@ -19,3 +19,7 @@ main a:hover { text-decoration: underline; }
 #sidebar details > summary:hover { background: var(--theme-hover); }
 #sidebar .section { list-style: none; padding-left: 14px; margin: 0 0 .4em; }
 #sidebar .chapter li { line-height: 1.75; }
+
+/* 章名链接在 summary 里必须是行内，否则被 chrome.css 的 .chapter li a{display:block} 顶到下一行，三角悬空 */
+#sidebar .chapter li details > summary > a { display: inline; padding: 0; margin: 0; color: inherit; border-radius: 0; }
+#sidebar .chapter li details > summary > a:hover { background: none; text-decoration: underline; }
