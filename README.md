@@ -4,7 +4,7 @@ https://andyxfuture.github.io/nonbiri-nouka/
 
 - 文库版 1–17 卷：150 章
 - Web 版续译：819–1101 话
-- 译名字典：1143 条
+- 译名字典：1142 条
 
 非商业性个人翻译与学习交流用途；版权归原作者及出版方所有，详见 disclaimer.html。
 
